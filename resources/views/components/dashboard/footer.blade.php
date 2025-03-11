@@ -43,8 +43,7 @@
         @endif
     });
 
-    document.getElementById('delete-post').addEventListener('click', function(event) {
-        event.preventDefault();
+    function btnDelete(postId) {
         Swal.fire({
             title: "Apakah Anda yakin?",
             text: "Anda tidak dapat mengembalikan data ini!",
@@ -56,8 +55,8 @@
             cancelButtonText: "Batal"
         }).then((result) => {
             if (result.isConfirmed) {
-                document.getElementById('delete-form').submit();
+                document.getElementById('delete-form-' + postId).submit();
             }
         });
-    });
+    }
 </script>

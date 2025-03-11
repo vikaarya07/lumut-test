@@ -7,7 +7,7 @@
             </h1>
             <div class="flex pt-2 gap-2 items-center">
                 <p class="py-1 px-2 text-xs font-medium rounded-lg bg-slate-200">
-                    {{ Auth::user()->username }}</p>
+                    {{ $post->user->username }}</p>
                 <p class="block text-xs text-gray-700 antialiased font-normal leading-relaxed">
                     {{ $post->created_at->diffForHumans() }}
                 </p>

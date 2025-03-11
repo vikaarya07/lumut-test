@@ -40,10 +40,10 @@
                                 {{ $posts->firstItem() + $key }}
                             </td>
                             <td class="px-6 py-2">
-                                {{ $post->title }}
+                                {{ Str::limit($post->title, 50) }}
                             </td>
                             <td class="px-6 py-2">
-                                {{ $post->content }}
+                                {{ Str::limit($post->content, 75) }}
                             </td>
                             <td class="px-6 py-2">
                                 <div class="flex items-center justify-start space-x-5">
@@ -55,11 +55,11 @@
                                                 d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
                                         </svg>
                                     </a>
-                                    <form id="delete-form" action="{{ route('admin.posts.destroy', $post->slug) }}"
-                                        method="POST">
+                                    <form id="delete-form-{{ $post->id }}"
+                                        action="{{ route('admin.posts.destroy', $post->slug) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="button" id="delete-post"
+                                        <button type="button" onclick="btnDelete('{{ $post->id }}')"
                                             class="text-sm text-red-500 outline-none hover:text-red-700">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="size-6" fill="currentColor"
                                                 class="bi bi-trash" viewBox="0 0 16 16">
@@ -70,7 +70,6 @@
                                             </svg>
                                         </button>
                                     </form>
-
                                 </div>
                             </td>
                         </tr>
@@ -82,6 +81,10 @@
                     <h3 class="text-base font-medium text-center text-gray-700 my-12">Tidak Ada Data Post</h3>
                 @endif
             </div>
+        </div>
+
+        <div class="my-6">
+            {{ $posts->links() }}
         </div>
 
     </x-dashboard.breadcrumbs>

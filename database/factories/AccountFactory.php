@@ -18,9 +18,9 @@ class AccountFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'Author',
-            'email' => 'author@gmail.com',
-            'username' => 'author',
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
+            'username' => fake()->unique()->userName(),
             'password' => Hash::make('author'),
         ];
     }

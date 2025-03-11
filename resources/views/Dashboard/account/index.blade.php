@@ -32,12 +32,6 @@
                             Username
                         </th>
                         <th scope="col" class="px-6 py-5 whitespace-nowrap">
-                            Password
-                        </th>
-                        <th scope="col" class="px-6 py-5 whitespace-nowrap">
-                            Role
-                        </th>
-                        <th scope="col" class="px-6 py-5 whitespace-nowrap">
                             Action
                         </th>
                     </tr>
@@ -56,12 +50,6 @@
                             </td>
                             <td class="px-6 py-2">
                                 {{ $account->username }}
-                            </td>
-                            <td class="px-6 py-2">
-                                {{ $account->password }}
-                            </td>
-                            <td class="px-6 py-2">
-                                {{ $account->role }}
                             </td>
                             <td class="px-6 py-2">
                                 <div class="flex items-center justify-start space-x-5">

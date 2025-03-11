@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -19,7 +20,7 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => Auth::id(),
+            'user_id' => User::factory(),
             'title' => fake()->sentence(),
             'slug' => Str::slug(fake()->sentence()),
             'content' => fake()->paragraph(),

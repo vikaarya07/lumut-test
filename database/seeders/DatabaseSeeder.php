@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);
 
-        // Post::factory(15)->recycle([
-        //     User::all()
-        // ])->create();
+        Post::factory(15)->recycle([
+            User::all()
+        ])->create();
 
-        Account::factory(1)->create();
+        Account::factory(5)->create();
     }
 }

@@ -20,6 +20,8 @@ class Post extends Model
         'username'
     ];
 
+    protected $with = ['user'];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

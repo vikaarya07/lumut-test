@@ -15,6 +15,5 @@ class Account extends Model
         'email',
         'username',
         'password',
-        'role'
     ];
 }
